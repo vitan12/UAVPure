@@ -1,0 +1,36 @@
+ #!/bin/bash
+
+
+	
+	thermalf="thermal/thermal"
+	number=0
+
+	while test -e "$thermalf$suffix.jpg"; do
+	    (( ++number ))
+	        suffix="$( printf -- '-%02d' "$number" )"
+    
+        done
+
+	fname="$thermalf$suffix.jpg"
+
+	printf 'Will use "%s" as filename\n' "$fname"
+
+	visiblef="visible"
+	number=0
+
+	while test -e "$visiblef$suffix.jpg"; do
+	    (( ++number ))
+	        suffix="$( printf -- '-%02d' "$number" )"
+    
+	done
+
+	vfname="$visible/visiblef$suffix.jpg"
+
+	printf 'Will use "%s" as filename\n' "$fname"
+
+
+	fswebcam -d /dev/video0 --no-banner  --save "$fname"
+
+
+	fswebcam -d /dev/video1 --no-banner  --save  "$vfname"
+
