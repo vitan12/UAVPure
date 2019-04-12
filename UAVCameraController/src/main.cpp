@@ -14,21 +14,11 @@
 #include <time.h>
 
 int main(int argc, const char * argv[]) {
-    for (int j = 0; j < 1000; ++j) {
-        system("bash_sript.sh");
-        
-        for (int i = 0; i < 10; ++i) {
-            std::ostringstream sstream;
-            sstream << "testImage" << i << ".jpg";
-            std::string fileName = sstream.str();
-            sleep(1000);
-            
-            if (FileIO::LoadFromFile(fileName)) {
-                sleep(5000);
-                continue;
-            } else {
-                std::cout << "Image " << i << " was not captured for round " << j << std::endl;
-            }
-        }
+    system("bash_sript.sh");
+    std::string fileName = "testimage1";
+    if (FileIO::LoadFromFile(fileName)) {
+        std::cout << "Image was captured" << std::endl;
+    } else {
+        std::cout << "Image was not captured" << std::endl;
     }
 }

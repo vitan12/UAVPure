@@ -11,7 +11,7 @@
 
 namespace uav {
     std::ostream &operator << (std::ostream &os, const PictureMeta &info) {
-        os << Date << Time << positionTaken << Velocity << std::endl;
+        //os << Date << Time << positionTaken << Velocity << std::endl;
         return os;
     }
 }

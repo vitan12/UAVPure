@@ -10,6 +10,7 @@
 #define picture_meta_hpp
 
 #include <stdio.h>
+#include <vector>
 
 namespace uav {
     class PictureMeta {
