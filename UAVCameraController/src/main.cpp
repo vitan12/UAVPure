@@ -14,7 +14,7 @@
 #include <time.h>
 
 int main(int argc, const char * argv[]) {
-    system("bash_sript.sh");
+    system("snapPic.sh");
     std::string fileName = "testimage1";
     if (FileIO::LoadFromFile(fileName)) {
         std::cout << "Image was captured" << std::endl;
